@@ -1,0 +1,45 @@
+
+
+MOV r1, 8
+MOV [777], 21
+
+*ADD r1, [777]
+
+labela:
+WRITE r1
+
+MOV R3, 14
+
+
+MOV R2, [R1 + 10*R3 + R1*4 + 492]
+
+WRITE R3
+WRITE [R3]
+
+MOV [333], 13
+SUB [333], 13
+jz labela4
+
+AND R1, 12
+
+labela4:
+READ R4
+* SUB R4, [333]
+WRITE r4
+JZ labela
+
+
+ADD [777], 8
+CMP [777], r1
+JE labela2
+
+AND [777], 12
+WRITE [777]
+
+labela2:
+READ r4
+OR r4, [333]
+JB labela2
+write r4
+
+
